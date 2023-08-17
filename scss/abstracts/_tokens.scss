@@ -1,0 +1,54 @@
+@use "colors" as *;
+@use "typography" as *;
+@use "sizes" as *;
+
+// body 
+$body-fs: $fs-400;
+$body-fw: $fw-regular;
+$body-line-height: auto;
+
+// buttons 
+$btn-default-padding: $size-2;
+$btn-default-txt-size: $fs-400;
+$btn-default-txt-weight: $fw-semibold;
+$btn-dafault-border-radius: $size-2;
+
+$btn-primary-bg-clr: $clr-primary-300;
+$btn-primary-hover-bg-clr: $clr-primary-400;
+
+$btn-ouline-border-clr: $clr-secondary-400;
+$btn-ouline-hover-bg-clr: $clr-secondary-400;
+$btn-ouline-hover-txt-clr: $clr-txt-100;
+
+
+// pricing card 
+$card-header-fs: $fs-700;
+$card-header-fw: $fw-bold;
+$card-header-hover-clr: $clr-primary-400;
+$card-info-fs: $fs-400;
+$card-info-clr: $clr-txt-300;
+
+// site header 
+$header-height: 75px;
+$header-inline-paddding: 15px;
+$header-menu-fs: $fs-500;
+$header-menu-fw: $fw-semibold;
+$header-menu-clr: $clr-txt-400;
+$header-menu-hover-clr: $clr-primary-400;
+
+$header-menu-bg-clr: $clr-primary-400;
+$header-menu-item-transition: cubic-bezier(0.4, 0.01, 0.165, 0.99);
+
+// footer 
+$footer-bg-clr: hsl(218, 45%, 22%);
+$footer-nav-header-size: $fs-600;
+$footer-nav-header-weight: $fw-semibold;
+$footer-nav-header-clr: $clr-txt-100;
+$footer-nav-item-size: $fs-400;
+$footer-nav-item-weight: $fw-regular;
+$footer-nav-item-clr: $clr-txt-200;
+
+// scroll bar 
+$scroll-bar-width : 10px;
+$scroll-bar-bg-color: $clr-primary-300;
+$scroll-bar-hover-bg-color: $clr-primary-400;

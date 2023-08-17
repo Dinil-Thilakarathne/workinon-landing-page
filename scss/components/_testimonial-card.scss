@@ -1,0 +1,38 @@
+@use '../abstracts' as *;
+
+.testimonial-card{
+    // width: min(90%, 320px);
+    max-width: 300px;
+    @include flex_box($direction: column);
+    background-color: $clr-secondary-200;
+    padding: 20px 10px;
+
+    &__content{
+        @include grid($justify : start);
+        
+        & p{
+            padding: 0 10px;
+            font-size: $fs-300;
+        }
+
+        & .content__header{
+            width: 100%;
+            font-size: $fs-300;
+            @include flex_box($col-gap: 10px);
+            font-weight: $fw-semibold;
+
+            & span:nth-child(1) {
+                color: $clr-primary-400;
+            }
+            & span:nth-child(2) {
+                color: $clr-secondary-400;
+            }
+        }
+    }
+
+    @include mq(small){
+        & {
+            width: 325px;
+        }
+    }
+}

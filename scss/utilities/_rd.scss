@@ -1,0 +1,7 @@
+@use '../abstracts' as *;
+
+@each $i, $size in $sizes {
+    .rd-#{$i} {
+      border-radius: $size;
+    }
+}

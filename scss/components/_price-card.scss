@@ -1,0 +1,36 @@
+@use '../abstracts' as *;
+
+.feature-card{
+    width: min(90vw,320px);
+    min-height: 350px;
+    @include flex_box($direction: column);
+    padding-inline: 15px;
+    background-color: $clr-txt-100;
+
+
+    &__img{
+
+    }
+
+    &__header{
+        font-size: $card-header-fs;
+        font-weight: $card-header-fw;
+    }
+    &__info{
+        font-size: $card-info-fs;
+        color: $card-info-clr;
+    }
+    &:is(:hover, :focus){
+        cursor: pointer;
+        background-color: $clr-primary-400;
+        .feature-card__header{
+            color: $clr-txt-100;
+        }
+        .feature-card__info{
+            color: $clr-txt-200;
+        }
+
+    }
+
+
+} 

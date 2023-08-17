@@ -1,0 +1,130 @@
+@use '../abstracts' as *;
+
+.header{
+    height: $header-height;
+    width: 100%;
+    @include flex_box($justify: space-between);
+    padding-inline: $header-inline-paddding;
+
+    &__logo{
+        @include flex_box($col-gap: 10px);
+
+        & span{
+            font-size: $fs-600;
+            font-weight: $fw-semibold;
+        }
+    }
+
+    &__nav{
+        height: 100%;
+        width: 50%;
+        position: relative;
+        z-index: 99;
+        @include flex_box($justify: flex-end);
+
+        & .menu-icon {
+            font-size: $fs-700;
+            color: $clr-primary-400;
+            cursor: pointer;
+        }
+
+
+        & .nav__menu{
+            height: calc(100vh);
+            width: min(80vw,320px);
+            position: absolute;
+            right: -$header-inline-paddding;
+            top: 0;
+            background-color: $header-menu-bg-clr;
+            border: none;
+            @include flex_box($direction: column,$justify: center,$row-gap: $size-8);
+            overflow: hidden;
+            transition: width .5s ease-in;
+            transform: translateY(-100%);
+
+            & .close-btn{
+                position: absolute;
+                top: calc($header-height / 2);
+                right: $header-inline-paddding;
+                font-size: $fs-700;
+                color: $clr-txt-100;
+                cursor: pointer;
+            }
+            
+            & li{
+                // width: 100%;
+                font-size: calc(($header-menu-fs) * 1.5);
+                font-weight: $header-menu-fw;
+                text-transform: uppercase;
+                transform: translateY(-100px);
+                opacity: 0;
+                scale: 0;
+
+                & a{
+                    color: $clr-txt-100;
+
+                    &:is(:focus, :hover){
+                        color: $clr-txt-300;
+                    }
+                }
+
+            }
+
+            & li:last-child() {
+                & .button{
+                    background-color: $clr-secondary-100;
+
+                    &:hover {
+                        background-color: $clr-primary-200;
+                    }
+                }
+            }
+        }
+    }
+
+    @include mq(large){
+        &__nav{
+            width: 80%;
+            background-color: transparent;
+            & .menu-icon{
+                display: none;
+            }
+
+            & .nav__menu{
+                height: $header-height;
+                position: static;
+                width: 100%;
+                flex-direction: row;
+                justify-content: end;
+                column-gap: 20px;
+                transform: translateY(0);
+                background-color: transparent;
+
+                & .close-btn{
+                    display: none;
+                }
+
+                & li{
+                    opacity: 1;
+                    transform: translateY(0);
+                    scale: 1;
+                    font-size: calc(($header-menu-fs) * .65);
+                    & a{
+                        color: $clr-txt-400;
+    
+                        &:is(:focus, :hover){
+                            color: $clr-primary-400;
+                        }
+                    }
+
+                    & button{
+                        font-size: calc(($header-menu-fs) * .65);
+                        background-color: $clr-primary-300;
+                        color: $clr-txt-100;
+                        padding: 10px 20px;
+                    }
+                }
+            }
+        }
+    }
+}

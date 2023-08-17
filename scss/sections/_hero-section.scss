@@ -1,0 +1,63 @@
+@use '../abstracts' as *;
+
+.hero{
+    height: calc(100vh - $header-height);
+    width: 100%;
+    @include flex_box($direction: column, $justify: space-around);
+    overflow: hidden;
+    position: relative;
+
+    &__content{
+        height: 50%;
+        padding-inline: 20px;
+        @include flex_box($direction: column, $align: flex-start, $row-gap  : 10px);
+
+        & h1{
+            font-size: $fs-700;
+            font-weight: $fw-bold;
+        }
+    }
+
+    &__image{
+        height: 50%;
+        width: 100%;
+        @include flex_box();
+
+        & img{
+            max-height: 95%;
+        }
+    }
+
+    &__bg-overlay{
+        position: absolute;
+        z-index: -1;
+        height: 100%;
+        width: calc(100vw - 10px);
+        background-color: $clr-secondary-200;
+    }
+
+    @include mq(small){ 
+        .hero__content{
+            // display: none;
+            padding-right: min(10vw,50px);
+        }
+    }
+
+    @include mq(medium){
+        & {
+            flex-direction: row;
+
+
+        }
+    }
+    @include mq(xlarge){
+        & {
+            overflow: visible;
+
+            &__image{
+                height: 100%;
+
+            }
+        }
+    }
+}

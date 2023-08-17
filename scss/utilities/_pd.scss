@@ -1,0 +1,7 @@
+@use '../abstracts' as *;
+
+@each $i, $size in $sizes {
+    .pd-#{$i} {
+      padding: calc(#{$size} * .75) calc(#{$size} * 2);
+    }
+}

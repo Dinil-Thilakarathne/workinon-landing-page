@@ -1,0 +1,89 @@
+@use '../abstracts' as *;
+
+.portfolios{
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px 0;
+    @include grid();
+    
+    & .section__header{
+        width: 100%;
+        padding-inline: 15px;
+        text-align: center;
+        
+        & h1{
+            font-size: $fs-700;
+            font-weight: $fw-semibold;
+        }
+        
+    }
+
+    &__wrapper{
+        width: 100%;
+        @include grid();
+
+
+        & .portfolio{
+            padding-top: 20px;
+            width: 100%;
+            @include flex_box($direction: column);
+
+            &__img{
+                max-width: 80%;
+                border-radius: 10px;
+            }
+
+            &__content{
+                width: 100%;
+                padding-inline: 10px;
+                @include grid($row-gap: 10px);
+                text-align: center;
+
+                & h1{
+                    font-size: $fs-600;
+                    font-weight: $fw-semibold;
+                }
+
+                & p{
+
+                }
+
+                & .content__tags{
+                    width: 100%;
+                    @include flex_box($justify: space-around);
+
+                    & button{
+                        padding: 5px 2.5rem ;
+                    }
+                }
+
+                & button.live-demo-btn{
+
+                }
+            }
+        }
+    }
+
+    @include mq(medium){
+        &__wrapper{
+            grid-template-columns: repeat(2,1fr);
+            column-gap: 20px;
+        }
+    }
+    @include mq(large){
+        &__wrapper{
+            grid-template-columns: repeat(1,1fr);
+
+            & .portfolio{
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+                width: 80%;
+
+                &__img{
+                    max-width: 50%;
+                }
+            }
+        }
+    }
+}

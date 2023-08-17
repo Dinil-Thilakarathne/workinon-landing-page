@@ -1,0 +1,67 @@
+@use '../abstracts' as *;
+
+.contact{
+    height: 50vh;
+    min-height: 50vh;
+    width: 100vw;
+    max-width: 100% !important;
+    background-color: $clr-primary-300;
+    
+    & .container{
+        height: inherit;
+        width: min(100%, 1024px);
+        margin: 0 auto;
+        @include flex_box($direction: column, $justify: space-evenly);
+    }
+
+    & .section__content{
+        text-align: center;
+        padding-inline: 15px;
+
+        & h1{
+            font-size: $fs-500;
+            font-weight: $fw-semibold;
+        }
+
+        & p{
+            font-size: $fs-300;
+        }
+    }
+
+    &-form{
+        width: 100%;
+        @include flex_box($direction: column);
+
+
+        & .form__input {
+            width: 80%;
+            border: 1px solid $clr-secondary-400;
+            border-radius: $size-1;
+            height: $size-8;
+            padding: $size-2 $size-4;
+            background-color: $clr-secondary-100;
+        }
+
+        & button {
+            margin-top: 20px;
+        }
+    }
+
+    @include mq(medium){
+        & {
+            .container{
+                flex-direction: row;
+
+            }
+
+            & .section__content{
+                width: 50%;
+                padding-right: 10px;
+                text-align: start;
+            }
+            &-form{
+                width: 50%;
+            }
+        }
+    }
+}

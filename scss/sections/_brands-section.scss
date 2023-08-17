@@ -1,0 +1,24 @@
+@use '../abstracts' as *;
+
+.brands {
+    min-height: 30vh;
+    width: 100%;
+    @include flex_box($direction: column, $justify: center);
+    overflow: hidden;
+    padding-inline: 20px;
+
+    & .section__header{
+        font-size: $fs-700;
+        font-weight: $fw-bold;
+    }
+
+    &__wrapper{
+        padding-top: 20px;
+    }
+
+    @include mq(xlarge){
+        & {
+            overflow: hidden;
+        }
+    }
+}

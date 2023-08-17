@@ -1,0 +1,56 @@
+@use '../abstracts' as *;
+
+.main{
+    min-height: 100vh;
+    width: 100%;
+    @include flex_box($direction: column, $justify: space-evenly);
+    overflow: hidden;
+
+    &__content{
+        @include grid($justify: start, $row-gap: 10px);
+        padding-inline: 15px;
+
+        & h1{
+            text-align: center;
+            font-size: $fs-700;
+            font-weight: $fw-semibold;
+        }
+
+        & p{
+            text-align: justify;
+        }
+    }
+
+    &__image{
+        @include flex_box();
+        & img{
+
+            max-width: 90%;
+        }
+    }
+
+    &.reverse{
+        flex-direction: column-reverse;
+    }
+
+    @include mq(medium){
+        & {
+            flex-direction: row;
+
+            &__content,
+            &__image{
+                width: 45%;
+            }
+
+            &__content{
+                & h1{
+                    text-align: start;
+                }
+            }
+        }
+
+        &.reverse{
+            flex-direction: row-reverse;
+        }
+    }
+}

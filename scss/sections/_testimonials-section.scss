@@ -1,0 +1,29 @@
+@use '../abstracts' as *;
+
+.testimonial {
+    min-height: 30vh;
+    width: 100%;
+    @include flex_box($direction: column, $justify: center);
+    overflow: hidden;
+    padding: 40px 10px; 
+    position: relative;
+
+
+
+    & .section__header{
+
+        & h1{
+
+            font-size: $fs-700;
+            font-weight: $fw-bold;
+        }
+    }
+
+    &__wrapper{
+        max-width: 1020px !important;
+        padding-top: 20px;
+    }
+
+
+
+}
