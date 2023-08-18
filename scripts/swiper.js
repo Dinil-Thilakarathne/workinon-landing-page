@@ -29,7 +29,7 @@ var swiper = new Swiper(".mySwiper-1", {
 var swiper = new Swiper(".mySwiper-2", {
     spaceBetween: 10,
     centeredSlides: true,
-    // slidesPerView: "auto",
+    slidesPerView: "auto",
     loop: true,
     autoplay: {
       delay: 4500,

@@ -203,16 +203,17 @@ body {
   gap: 0 0;
   padding-inline: 15px;
 }
-.header__logo {
+.header__logo a {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 0 10px;
 }
-.header__logo span {
+.header__logo a span {
   font-size: clamp(1.26rem, 1.02rem + 1.2vw, 1.75rem);
   font-weight: 600;
+  color: hsl(0, 0%, 20%);
 }
 .header__nav {
   height: 100%;
@@ -356,7 +357,7 @@ body {
   position: absolute;
   z-index: -1;
   height: 100%;
-  width: calc(100vw - 10px);
+  width: 100%;
   background-color: hsl(42, 100%, 91%);
 }
 @media screen and (min-width: 25em) {
@@ -375,6 +376,9 @@ body {
   }
   .hero__image {
     height: 100%;
+  }
+  .hero__bg-overlay {
+    width: calc(100vw - 10px);
   }
 }
 

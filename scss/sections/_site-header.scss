@@ -7,12 +7,15 @@
     padding-inline: $header-inline-paddding;
 
     &__logo{
-        @include flex_box($col-gap: 10px);
-
-        & span{
-            font-size: $fs-600;
-            font-weight: $fw-semibold;
+        & a{
+            @include flex_box($col-gap: 10px);
+            & span{
+                font-size: $fs-600;
+                font-weight: $fw-semibold;
+                color: $clr-txt-400;
+            }
         }
+
     }
 
     &__nav{
